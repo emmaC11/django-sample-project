@@ -36,7 +36,7 @@
                </div>
                <!-- want out posts to disply in rows of three, then after 6 posts we will paginate -->
                <!-- we will use built in loop counter to close existing row div, & add a new one after 6 posts have been displayed -->
-               {%if forloop.counter|divisible:3 %}
+               {%if forloop.counter|divisibleby:3 %}
             </div>
             <div class="row">
                {% endif %} 
