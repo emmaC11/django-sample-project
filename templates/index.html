@@ -8,9 +8,8 @@
         <!-- Blog Entries Column -->
         <div class="col-12 mt-3 left">
             <div class="row">
-               <!-- creating a for loop of list of posts that will be passed in from our view  -->
-               {% for post in post_list %}
-               <div class="col-md-4">
+                {% for post in post_list %}
+                <div class="col-md-4">
                     <div class="card mb-4">
                         <div class="card-body">
                             <div class="image-container">
@@ -33,14 +32,13 @@
                                 {{ post.number_of_likes }}</p>
                         </div>
                     </div>
-               </div>
-               <!-- want out posts to disply in rows of three, then after 6 posts we will paginate -->
-               <!-- we will use built in loop counter to close existing row div, & add a new one after 6 posts have been displayed -->
-               {%if forloop.counter|divisibleby:3 %}
+                </div>
+                {% if forloop.counter|divisibleby:3 %}
             </div>
             <div class="row">
-               {% endif %} 
-               {% endfor %}
+                {% endif %}
+                {% endfor %}
+
             </div>
         </div>
     </div>
@@ -57,7 +55,5 @@
         </ul>
     </nav>
     {% endif %}
-
 </div>
-
 {%endblock%}
