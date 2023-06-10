@@ -1,7 +1,9 @@
-from django.shortcuts import render
-from django.views import generic
+from django.shortcuts import render, get_object_or_404
+from django.views import generic, View
 from .models import Post
 # Create your views here.
+
+#vthis view here displays the post list
 class PostList(generic.ListView):
     #using post as its model
     model = Post
@@ -11,3 +13,8 @@ class PostList(generic.ListView):
     #template name is the html file that our view will render
     template_name = 'index.html'
     paginate_by = 6
+
+# this view is for viewing the post detail/content when clicked
+
+class PostDetail(View):
+    
